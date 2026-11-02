@@ -9,7 +9,7 @@ export const site = {
   name: 'Andrew MacKenzie',
   description: 'Notes on code, editors, and the tools I use.',
   profiles: [
-    { platform: 'x the everything app', handle: '@0xA412109', href: 'https://x.com/0xA412109' },
+    { platform: 'x the everything app', handle: '@xyzzydev', href: 'https://x.com/xyzzydev' },
     { platform: 'github', handle: '@xyzzyy', href: 'https://github.com/xyzzyy' },
   ],
   source: 'https://github.com/xyzzyy/devsite',
