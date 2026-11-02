@@ -1,10 +1,11 @@
 # xyzzyy.dev
 
-My personal site and blog, built with Next.js.
+My personal site and blog, built with Next.js. The site lives in `blog/`.
 
 ## Development
 
 ```bash
+cd blog
 pnpm install
 cp .env.example .env.local   # then fill in the values
 pnpm dev                     # http://localhost:3000
@@ -14,7 +15,7 @@ pnpm dev                     # http://localhost:3000
 
 ## Deploying
 
-The site runs as a worker, configured in `wrangler.jsonc`. Pages are cached in an object storage bucket and refreshed in the background through a Durable Object queue (see `open-next.config.ts`).
+The site runs as a worker, configured in `blog/wrangler.jsonc`. Pages are cached in an object storage bucket and refreshed in the background through a Durable Object queue (see `blog/open-next.config.ts`).
 
 1. Create the cache bucket once: `npx wrangler r2 bucket create devsite-cache`.
 2. Set the variables below as build variables and as runtime variables (the CMS key as a secret). Pages are prerendered during the build, so the build needs them too.
@@ -22,7 +23,7 @@ The site runs as a worker, configured in `wrangler.jsonc`. Pages are cached in a
 
 ## Configuration
 
-Set these in `.env.local` for development, and as described in [Deploying](#deploying) for production.
+Set these in `blog/.env.local` for development, and as described in [Deploying](#deploying) for production.
 
 | Variable | Purpose |
 | --- | --- |
@@ -33,6 +34,8 @@ Set these in `.env.local` for development, and as described in [Deploying](#depl
 Without the CMS variables, the site builds with an empty blog.
 
 ## Layout
+
+Paths are relative to `blog/`.
 
 - `app/page.tsx`, `app/blog`, `app/contact`: the pages.
 - `app/blog/utils.ts`: loads posts from the CMS.
